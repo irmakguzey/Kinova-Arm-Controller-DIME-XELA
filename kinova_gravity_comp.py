@@ -9,6 +9,8 @@ from IPython import embed
 REFERENCE_FRAME = 'j2n6s300_link_base'
 END_EFFECTOR_FRAME = 'j2n6s300_link_6'
 
+PUBLISHER_TOPIC = '/j2n6s300_driver/hand_gravity_vector'
+
 class Transformer(object):
     def __init__(self, rate = 50):
         try:
@@ -25,7 +27,7 @@ class Transformer(object):
         message = Float64MultiArray()
         message.data = []
 
-        self.pub = rospy.Publisher('/j2n6s300_driver/hand_gravity_vector',Float64MultiArray, queue_size=1)
+        self.pub = rospy.Publisher(PUBLISHER_TOPIC, Float64MultiArray, queue_size=1)
 
         while not rospy.is_shutdown():
             try:
@@ -49,10 +51,11 @@ class Transformer(object):
                 self.Rate.sleep()
 
             except (tf.LookupException, tf.ConnectivityException, tf.ExtrapolationException):
-                print('Not able to get transformation!') 
+                pass
             
             # rospy.sleep(0.1)
 
 if __name__ == '__main__':
     t = Transformer()
     t.record_and_publish()
+    print("Publishing the dynamic gravity vector for the end effector!")
