@@ -8,10 +8,10 @@
 	<arg name="feedback_publish_rate" default="0.001" />
 
   <!-- If the node handles multiple robots uncomment this and configure /config/multiple_robots.yaml" -->
-	<rosparam file="$(find kinova_bringup)/launch/config/multiple_robots.yaml" command="load" />
+	<rosparam file="$(find kinova_arm)/launch/config/multiple_robots.yaml" command="load" />
 
   <node name="$(arg kinova_robotName)_driver" pkg="kinova_driver" type="kinova_arm_driver" output="screen" cwd="node" args="$(arg kinova_robotType)">
-    <rosparam file="$(find kinova_bringup)/launch/config/robot_parameters.yaml" command="load" />
+    <rosparam file="$(find kinova_arm)/launch/config/robot_parameters.yaml" command="load" />
     <param name="serial_number" value="$(arg kinova_robotSerial)" />   
     <param name="robot_name" value="$(arg kinova_robotName)" />   
     <param name="robot_type" value="$(arg kinova_robotType)" />   
@@ -34,5 +34,8 @@
       <remap from="joint_states" to="/$(arg kinova_robotName)_driver/out/joint_state"/>
     </node>
   </group>
+
+  <node pkg="kinova_arm" type="gravity_transform.py" name="grav_comp"/>
+
 
 </launch>

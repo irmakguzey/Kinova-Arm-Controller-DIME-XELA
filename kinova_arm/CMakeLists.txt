@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 2.8.3)
-project(kinova_bringup)
+project(kinova_arm)
 
 ## Find catkin macros and libraries
 ## if COMPONENTS list like find_package(catkin REQUIRED COMPONENTS xyz)
@@ -77,7 +77,7 @@ find_package(catkin REQUIRED)
 ## DEPENDS: system dependencies of this project that dependent projects also need
 catkin_package(
 #  INCLUDE_DIRS include
-#  LIBRARIES kinova_bringup
+#  LIBRARIES kinova_arm
 #  CATKIN_DEPENDS other_catkin_pkg
 #  DEPENDS system_lib
 )
@@ -91,19 +91,19 @@ catkin_package(
 # include_directories(include)
 
 ## Declare a cpp library
-# add_library(kinova_bringup
-#   src/${PROJECT_NAME}/kinova_bringup.cpp
+# add_library(kinova_arm
+#   src/${PROJECT_NAME}/kinova_arm.cpp
 # )
 
 ## Declare a cpp executable
-# add_executable(kinova_bringup_node src/kinova_bringup_node.cpp)
+# add_executable(kinova_arm_node src/kinova_arm_node.cpp)
 
 ## Add cmake target dependencies of the executable/library
 ## as an example, message headers may need to be generated before nodes
-# add_dependencies(kinova_bringup_node kinova_bringup_generate_messages_cpp)
+# add_dependencies(kinova_arm_node kinova_arm_generate_messages_cpp)
 
 ## Specify libraries to link a library or executable target against
-# target_link_libraries(kinova_bringup_node
+# target_link_libraries(kinova_arm_node
 #   ${catkin_LIBRARIES}
 # )
 
@@ -122,7 +122,7 @@ catkin_package(
 # )
 
 ## Mark executables and/or libraries for installation
-# install(TARGETS kinova_bringup kinova_bringup_node
+# install(TARGETS kinova_arm kinova_arm_node
 #   ARCHIVE DESTINATION ${CATKIN_PACKAGE_LIB_DESTINATION}
 #   LIBRARY DESTINATION ${CATKIN_PACKAGE_LIB_DESTINATION}
 #   RUNTIME DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
@@ -140,12 +140,13 @@ install(FILES
   DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}
 )
 
+catkin_python_setup()
 #############
 ## Testing ##
 #############
 
 ## Add gtest based cpp test target and link libraries
-# catkin_add_gtest(${PROJECT_NAME}-test test/test_kinova_bringup.cpp)
+# catkin_add_gtest(${PROJECT_NAME}-test test/test_kinova_arm.cpp)
 # if(TARGET ${PROJECT_NAME}-test)
 #   target_link_libraries(${PROJECT_NAME}-test ${PROJECT_NAME})
 # endif()

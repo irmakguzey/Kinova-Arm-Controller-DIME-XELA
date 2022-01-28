@@ -1,9 +1,9 @@
 <?xml version="1.0"?>
 <package>
-  <name>kinova_bringup</name>
+  <name>kinova_arm</name>
   <version>0.0.0</version>
   <description>
-      The kinova_bringup package.
+      The kinova_arm package.
       Contains launch files for interacting with variousKinova arms. 
   </description>
 

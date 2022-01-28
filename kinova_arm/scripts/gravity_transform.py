@@ -1,10 +1,10 @@
+#!/usr/bin/python3
+
 import rospy 
 import tf
 import math
 import numpy
 from std_msgs.msg import Float64MultiArray
-
-from IPython import embed
 
 REFERENCE_FRAME = 'j2n6s300_link_base'
 END_EFFECTOR_FRAME = 'j2n6s300_link_6'
@@ -22,8 +22,6 @@ class Transformer(object):
         self.Rate = rospy.Rate(rate)
 
     def record_and_publish(self):
-        # br = tf.TransformBroadcaster()
-
         message = Float64MultiArray()
         message.data = []
 
@@ -45,7 +43,6 @@ class Transformer(object):
                 g_y = -rotated_gravity_vector[0]
                 g_z = rotated_gravity_vector[2]
 
-                # print('Gravity vector: ', rotated_gravity_vector)
                 message.data = [g_x, g_y, g_z]
                 self.pub.publish(message)
                 self.Rate.sleep()
@@ -53,9 +50,8 @@ class Transformer(object):
             except (tf.LookupException, tf.ConnectivityException, tf.ExtrapolationException):
                 pass
             
-            # rospy.sleep(0.1)
-
 if __name__ == '__main__':
     t = Transformer()
-    t.record_and_publish()
+    
     print("Publishing the dynamic gravity vector for the end effector!")
+    t.record_and_publish()

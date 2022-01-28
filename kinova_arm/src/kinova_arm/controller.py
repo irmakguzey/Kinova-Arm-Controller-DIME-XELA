@@ -17,7 +17,7 @@ import math
 
 """ Global variable """
 
-class Kinova_arm(object):
+class KinovaController(object):
 
     def __init__(self):
         
