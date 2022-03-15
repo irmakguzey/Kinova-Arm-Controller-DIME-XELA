@@ -101,8 +101,6 @@ def getcurrentCartesianCommand():
     topic_address = '/j2n6s300_driver/out/cartesian_command'
     rospy.Subscriber(topic_address, kinova_msgs.msg.KinovaPose, setcurrentCartesianCommand)
     rospy.wait_for_message(topic_address, kinova_msgs.msg.KinovaPose)
-    print('position listener obtained message for Cartesian pose. ')
-
 
 def setcurrentCartesianCommand(feedback):
     global currentCartesianCommand

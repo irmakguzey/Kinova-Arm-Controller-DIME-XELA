@@ -52,8 +52,6 @@ def getcurrentJointCommand():
     topic_address = '/j2n6s300_driver/out/joint_command'
     rospy.Subscriber(topic_address, kinova_msgs.msg.JointAngles, setcurrentJointCommand)
     rospy.wait_for_message(topic_address, kinova_msgs.msg.JointAngles)
-    print('position listener obtained message for joint position. ')
-
 
 def setcurrentJointCommand(feedback):
     global currentJointCommand
