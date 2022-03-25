@@ -1,5 +1,5 @@
 # Kinova Arm Controller - Noetic
-This repository contains the information to setup the ROS Noetic based controller to control the Kinova Arm. We would advice you to install the Kinova SDK and run the setup.sh file in the base repository for convenience and use this as a debugging tool.
+This repository contains the information to setup the ROS Noetic based controller part of [DIME](https://arxiv.org/abs/2203.13251) to control the Kinova Arm. We would advice you to install the Kinova SDK and run the setup.sh file in the base repository for convenience and use this as a debugging tool.
 
 ## Contents
 1. [Requirements](#requirements)
@@ -25,4 +25,15 @@ source <base-controller-dir>/devel/setup.bash
 Then you can launch the Allegro Hand's roslaunch file to start controlling the roslaunch file.
 ```
 roslaunch kinova_arm kinova_robot.launch
+```
+## Citation
+
+If you use this repo in your research, please consider citing the paper as follows:
+```
+@article{arunachalam2022dime,
+  title={Dexterous Imitation Made Easy: A Learning-Based Framework for Efficient Dexterous Manipulation},
+  author={Sridhar Pandian Arunachalam and Sneha Silwal and Ben Evans and Lerrel Pinto},
+  journal={arXiv preprint arXiv:2203.13251},
+  year={2022}
+}
 ```
