@@ -1,7 +1,7 @@
 #! /usr/bin/python3
 """A helper program to test cartesian goals for the JACO and MICO arms."""
 
-import roslib; roslib.load_manifest('kinova_demo')
+import roslib; roslib.load_manifest('kinova_arm')
 import rospy
 
 import numpy as np
