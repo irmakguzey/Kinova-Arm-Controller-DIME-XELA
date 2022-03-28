@@ -1,5 +1,5 @@
 # Kinova Arm Controller - Noetic
-This repository contains the information to setup the ROS Noetic based controller part of [DIME](https://arxiv.org/abs/2203.13251) to control the Kinova Arm. We would advice you to install the Kinova SDK and run the setup.sh file in the [base repository](https://github.com/NYU-robot-learning/DIME-Controllers) for convenience and use this as a debugging tool.
+This repository contains the information to setup the ROS Noetic based controller part of [DIME](https://arxiv.org/abs/2203.13251) to control the Kinova Arm. We would advice you to install the Kinova SDK and run the setup.sh file in the [base repository](https://github.com/NYU-robot-learning/DIME-Controllers) for convenience and use this as a debugging tool. The base repo containing all the information can be found at [DIME - Models](https://github.com/NYU-robot-learning/DIME-Models).
 
 ## Contents
 1. [Requirements](#requirements)
