@@ -31,6 +31,9 @@ class Transformer(object):
             try:
                 (translation, rotation) = self.listener.lookupTransform(REFERENCE_FRAME, END_EFFECTOR_FRAME, rospy.Time(0))
 
+                # rospy.loginfo('translation in grav_comp: {}'.format(translation))
+                # rospy.loginfo('rotation in grav_comp: {}'.format(rotation))
+
                 rotation_rpy = list(tf.transformations.euler_from_quaternion(rotation))
                 rotation_rpy[0] = rotation_rpy[0] + math.pi
                 rotation_rpy[2] = rotation_rpy[2] + (math.pi/2)

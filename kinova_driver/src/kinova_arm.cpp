@@ -75,8 +75,8 @@ KinovaArm::KinovaArm(KinovaComm &arm, const ros::NodeHandle &nodeHandle, const s
           }
 
           robots_[i].name = std::string(robot_list[i]["name"]);
-          robots_[i].name = std::string(robot_list[i]["type"]);
-          robots_[i].name = std::string(robot_list[i]["serial"]);
+          robots_[i].type = std::string(robot_list[i]["type"]);
+          robots_[i].serial = std::string(robot_list[i]["serial"]);
         }
     }
 
